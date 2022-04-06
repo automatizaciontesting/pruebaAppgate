@@ -1,0 +1,78 @@
+repositories {
+    maven {
+        url "https://plugins.gradle.org/m2"
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2"
+        }
+
+    }
+    ext {
+        serenityCoreVersion = "3.0.5"
+        serenityCucumberVersion = "3.0.5"
+        junitVersion = "4.13.2"
+        assertJVersion = '3.21.0'
+        slf4jVersion = '2.0.0-alpha4'
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.4")
+        classpath("net.serenity-bdd:serenity-single-page-report:${serenityCoreVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'java-library'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'ISO-8859-1'
+}
+test {
+    systemProperty "file.encoding", "ISO-8859-1"
+}
+
+dependencies {
+    implementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    implementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    implementation "net.serenity-bdd:serenity-junit:${serenityCoreVersion}"
+    testImplementation "junit:junit:${junitVersion}"
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.8.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+    testImplementation "org.assertj:assertj-core:${assertJVersion}"
+    implementation "org.slf4j:slf4j-simple:${slf4jVersion}"
+    implementation 'org.dom4j:dom4j:2.1.1'
+    implementation 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5'
+    implementation 'io.appium:java-client:7.6.0'
+
+}
+
+test {
+    systemProperty "file.encoding", "ISO-8859-1"
+    enableAssertions = true
+    systemProperty 'tags', System.getProperty('tags', '')
+    systemProperty 'environment', System.getProperty('environment', '')
+    systemProperty 'cucumber.filter.tags', System.getProperty('cucumber.filter.tags')
+    useJUnitPlatform(){
+    }
+    testLogging.showStandardStreams = true
+    systemProperties['junit.jupiter.execution.parallel.enabled'] = true
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    forkEvery = 3
+}
+serenity {
+    reports = ["single-page-html"]
+}
+wrapper {
+    gradleVersion = '7.4' //version required
+}
+
+gradle.startParameter.continueOnFailure = true
+gradle.startParameter.refreshDependencies = false
+
+test.finalizedBy(aggregate)
