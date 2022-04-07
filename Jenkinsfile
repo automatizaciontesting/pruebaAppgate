@@ -10,7 +10,7 @@ pipeline {
          stage('Test') {
              steps {
                     git url: 'https://github.com/automatizaciontesting/pruebaAppgate.git', branch: 'master'
-                    sh 'gradle clean test'
+                    sh 'clean test'
                 }
          }
      }
