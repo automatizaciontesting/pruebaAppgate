@@ -93,15 +93,28 @@ Debemos como precondición descargar appium server GUI e appium inspertor de los
 
   adb -s emulator-5556 install C:\Users\usuarioWindows\AppData\Local\Android\Sdk\platform-tools\Apks\nombreApk
 
+## Modo ejecución de casos de prueba
+La ejecución de casos se puede realizar desde consola o directamente desde la clase runner
 
+Clase runner
+![Serenity properties](imagesReadme/runnerClass.png)
+Desde la consola
+![Serenity properties](imagesReadme/ExecutionConsole.png)
+![Serenity properties](imagesReadme/ExecutionConsole2.png)
 
+## Reporte serenity
+El reporte de serenity es una forma importan de validar y verificar resultados obtenidos de acuerdo a los criterios de aceptación.
+Dentro de este reporte se encuentran los tags ejecutados, tiempo, capturas de pantallas entre otros datos
 
-
-
+![Serenity properties](imagesReadme/serenityDetailsHome1.png)
+![Serenity properties](imagesReadme/serenityDetailsHome2.png)
+![Serenity properties](imagesReadme/serenityDetails.png)
+![Serenity properties](imagesReadme/serenityDetails2.png)
+![Serenity properties](imagesReadme/serenityDetails3.png)
+![Serenity properties](imagesReadme/serenityDetails4.png)
 
 Comando Push en proyecto existente
 ```sh
-cd eltiempo
 git init
 git remote add origin https://github.com/automatizaciontesting/pruebaAppgate.git
 git add .

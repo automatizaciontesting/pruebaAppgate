@@ -72,6 +72,7 @@ public class HomeRestApiClientPage extends MobilePageObject {
             if(!elementoBody.getText().isEmpty()){
                 String string =elementoBody.getText().replace("\n","");
                 JSONObject json = new JSONObject(string);
+                Serenity.recordReportData().withTitle("Response").andContents(string);
                 helpers.data.put("getLng",json.get("lng").toString());
                 helpers.data.put("getLat",json.get("lat").toString());
                 break;
