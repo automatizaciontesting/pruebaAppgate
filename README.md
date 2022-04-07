@@ -102,6 +102,21 @@ Desde la consola
 ![Serenity properties](imagesReadme/ExecutionConsole.png)
 ![Serenity properties](imagesReadme/ExecutionConsole2.png)
 
+Ejecucución desde jenkins
+
+Jenkins nos provee un ambiente de ejecución, para este proyecto se ejecuto en la maquina local con configuraciones basicas
+![Jenkins](imagesReadme/jenkinsJobs.png)
+![Jenkins](imagesReadme/jenkinsSetting1.png)
+![Jenkins](imagesReadme/jenkinsSetting2.png)
+![Jenkins](imagesReadme/jenkinsSetting3.png)
+![Jenkins](imagesReadme/jenkinsSetting4.png)
+![Jenkins](imagesReadme/jenkinsSetting5.png)
+![Jenkins](imagesReadme/jenkinsSetting6.png)
+![Jenkins](imagesReadme/jenkinsConsoleOutput.png)
+![Jenkins](imagesReadme/jenkinsConsoleOutput2.png)
+![Jenkins](imagesReadme/jenkinsConsoleOutput3.png)
+![Jenkins](imagesReadme/jenkinsSerenityReport.png)
+
 ## Reporte serenity
 El reporte de serenity es una forma importan de validar y verificar resultados obtenidos de acuerdo a los criterios de aceptación.
 Dentro de este reporte se encuentran los tags ejecutados, tiempo, capturas de pantallas entre otros datos
