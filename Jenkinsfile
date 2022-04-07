@@ -6,7 +6,6 @@ pipeline {
     parameters {
         string(name: 'tags', defaultValue: 'consumirApiRestAndroid; ls /', description: 'Tag ejecucion de prueba')
       }
-         }
        stage('Git checkout') { // for display purposes
           git url: 'https://github.com/automatizaciontesting/pruebaAppgate.git', branch: 'master'
        }
