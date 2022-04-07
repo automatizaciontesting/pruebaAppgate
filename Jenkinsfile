@@ -7,6 +7,9 @@ pipeline {
         string(name: 'tags', defaultValue: 'consumirApiRestAndroid', description: 'Tag ejecucion de prueba')
     }
   stages {
+     stage('Git checkout') { // for display purposes
+        git url: 'https://github.com/automatizaciontesting/pruebaAppgate.git', branch: 'master'
+     }
     stage('Example') {
       steps {
          sh 'gradle clean test -Dtags=${tags}'
