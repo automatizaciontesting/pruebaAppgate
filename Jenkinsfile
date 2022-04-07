@@ -3,14 +3,14 @@ pipeline {
       tools {
         gradle "GRADLE_HOME"
     }
-    parameters {
-        string(name: 'tags', defaultValue: 'consumirApiRestAndroid', description: 'Tag ejecucion de prueba')
-    }
+//     parameters {
+//         string(name: 'tags', defaultValue: 'consumirApiRestAndroid', description: 'Tag ejecucion de prueba')
+//     }
   stages {
          stage('Test') {
              steps {
                     git url: 'https://github.com/automatizaciontesting/pruebaAppgate.git', branch: 'master'
-                    sh 'gradle clean test -Dtags=${tags}'
+                    sh 'gradle clean test'
                 }
          }
      }
