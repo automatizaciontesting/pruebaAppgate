@@ -1,8 +1,8 @@
 pipeline {
   agent any
-      tools {
-        gradle "GRADLE_HOME"
-    }
+//       tools {
+//         gradle "GRADLE_HOME"
+//     }
 //     parameters {
 //         string(name: 'tags', defaultValue: 'consumirApiRestAndroid', description: 'Tag ejecucion de prueba')
 //     }
