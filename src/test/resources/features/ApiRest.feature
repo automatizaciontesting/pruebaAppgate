@@ -6,9 +6,11 @@ Feature:Consumir API-REST
   Android con target API 19
 
 @consumirApiRestAndroid
-  Scenario: consumir API-REST con longitud y latitud definida por el usuario
-  Given ingreso a la aplicacion android
-  When ingreso la latitud y la longitud
-  |hoja|
+  Scenario Outline: consumir API-REST con longitud y latitud definida por el usuario
+  Given que se ingresan los datos del servicio <Fila>
+  |Hoja|
   |DatosApiRest|
-  Then valido que los valores generados
+  Then valido que los valores generados sean los correctos en el response
+  Examples:
+    | Fila |
+    |    1 |

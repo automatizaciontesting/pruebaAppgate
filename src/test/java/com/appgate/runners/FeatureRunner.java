@@ -1,4 +1,4 @@
-package com.appgate.stepsDefinition.runners;
+package com.appgate.stepsdefinition.runners;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.CucumberOptions;

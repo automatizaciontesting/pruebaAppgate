@@ -49,6 +49,10 @@ dependencies {
     implementation 'org.dom4j:dom4j:2.1.1'
     implementation 'org.apache.maven.plugins:maven-surefire-plugin:3.0.0-M5'
     implementation 'io.appium:java-client:7.6.0'
+    implementation 'com.google.oauth-client:google-oauth-client:1.32.1'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.32.1'
+    implementation 'com.google.apis:google-api-services-sheets:v4-rev612-1.25.0'
+    implementation group: 'org.json', name: 'json', version: '20211205'
 
 }
 
